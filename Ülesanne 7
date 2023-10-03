@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tervitus</title>
+</head>
+<body>
+    <h1>Tervitus</h1>
+    <script>
+        function tervita() {
+            var tervitus = "Tere päiksekesekene!";
+            alert(tervitus);
+        }
+    </script>
+    <button onclick="tervita()">Tervita</button>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liitu uudiskirjaga</title>
+</head>
+<body>
+    <h1>Liitu uudiskirjaga</h1>
+    <form action="uudiskiri.html" method="post">
+        <input type="email" name="email" placeholder="Sisesta oma e-mail">
+        <button type="submit">Liitu</button>
+    </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kasutajanimi ja email</title>
+</head>
+<body>
+    <h1>Kasutajanimi ja email</h1>
+    <script>
+        function genereeriEmail() {
+            var kasutajanimi = document.getElementById("kasutajanimi").value.toLowerCase();
+            var email = kasutajanimi + "@hkhk.edu.ee";
+            document.getElementById("email").textContent = email;
+        }
+    </script>
+    <input type="text" id="kasutajanimi" placeholder="Sisesta kasutajanimi">
+    <button onclick="genereeriEmail()">Genereeri email</button>
+    <p id="email"></p>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arvud</title>
+</head>
+<body>
+    <h1>Arvud</h1>
+    <script>
+        function genereeriArvud() {
+            var algus = parseInt(document.getElementById("algus").value);
+            var lopp = parseInt(document.getElementById("lopp").value);
+            var samm = parseInt(document.getElementById("samm").value);
+
+            var arvud = [];
+            for (var i = algus; i <= lopp; i += samm) {
+                arvud.push(i);
+            }
+
+            document.getElementById("tulemus").textContent = arvud.join(", ");
+        }
+    </script>
+    <input type="number" id="algus" placeholder="Sisesta arv algusena">
+    <input type="number" id="lopp" placeholder="Sisesta arv lõppena">
+    <input type="number" id="samm" placeholder="Sisesta arv sammuna">
+    <button onclick="genereeriArvud()">Genereeri arvud</button>
+    <p id="tulemus"></p>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ristküliku pindala</title>
+</head>
+<body>
+    <h1>Ristküliku pindala</h1>
+    <script>
+        function arvutaPindala() {
+            var pikkus = parseFloat(document.getElementById("pikkus").value);
+            var laius = parseFloat(document.getElementById("laius").value);
+
+            var pindala = pikkus * laius;
+            document.getElementById("tulemus").textContent = "Pindala: " + pindala;
+        }
+    </script>
+    <input type="number" id="pikkus" placeholder="Sisesta pikkus">
+    <input type="number" id="laius" placeholder="Sisesta laius">
+    <button onclick="arvutaPindala()">Arvuta pindala</button>
+    <p id="tulemus"></p>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Isikukood</title>
+</head>
+<body>
+    <h1>Isikukood</h1>
+    <script>
+        function kontrolliIsikukoodi() {
+            var isikukood = document.getElementById("isikukood").value;
+
+            if (isikukood.length !== 11) {
+                document.getElementById("tulemus").textContent = "Vigane isikukood";
+            } else {
+                var sugu = isikukood.charAt(0) % 2 === 0 ? "Naine" : "Mees";
+                var aasta = isikukood.substr(1, 2);
+                var kuu = isikukood.substr(3, 2);
+                var paev = isikukood.substr(5, 2);
+
+                document.getElementById("tulemus").textContent = "Sugu: " + sugu + ", Sünniaeg: " + paev + "." + kuu + "." + aasta;
+            }
+        }
+    </script>
+    <input type="text" id="isikukood" placeholder="Sisesta isikukood">
+    <button onclick="kontrolliIsikukoodi()">Kontrolli</button>
+    <p id="tulemus"></p>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Head mõtted</title>
+</head>
+<body>
+    <h1>Head mõtted</h1>
+    <script>
+        function genereeriLause() {
+            var alused = ["Elu", "Armastus", "Õnn"];
+            var oeldised = ["on imeline", "toob rõõmu", "muudab maailma paremaks"];
+            var sihitised = ["iga päev", "su südames", "sinu ümber"];
+
+            var juhuslikAlus = alused[Math.floor(Math.random() * alused.length)];
+            var juhuslikOeldis = oeldised[Math.floor(Math.random() * oeldised.length)];
+            var juhuslikSihitis = sihitised[Math.floor(Math.random() * sihitised.length)];
+
+            var lause = juhuslikAlus + " " + juhuslikOeldis + " " + juhuslikSihitis + "."};

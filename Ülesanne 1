@@ -1,0 +1,16 @@
+Ülesanne 1
+<?php
+$nimi = "Kristo";
+$sunniaasta = "2006";
+$tahtkuju = "Jäär";
+
+echo $nimi . "\n" . $sunniaasta . "\n" . $tahtkuju;
+?>
+
+<?php
+echo "It's My Life - Dr. Alban";
+?>
+
+<?php
+echo "۱(۱ ( -.-) 0_(\")(\")";
+?>

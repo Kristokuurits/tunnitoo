@@ -1,0 +1,39 @@
+<?php
+
+$arv1 = 20;
+$arv2 = 10;
+
+$liitmine = $arv1 + $arv2;
+$lahutamine = $arv1 - $arv2;
+$korrutamine = $arv1 * $arv2;
+$jagamine = $arv1 / $arv2;
+$jääk = $arv1 % $arv2;
+
+echo "Ülesanne 1 - Muutujate $arv1 ja $arv2 vahelised tehted:\n";
+echo "Liitmine: $arv1 + $arv2 = $liitmine\n";
+echo "Lahutamine: $arv1 - $arv2 = $lahutamine\n";
+echo "Korrutamine: $arv1 * $arv2 = $korrutamine\n";
+echo "Jagamine: $arv1 / $arv2 = $jagamine\n";
+echo "Jääk: $arv1 % $arv2 = $jääk\n\n";
+
+
+$millimeetrid = 2500;
+$sentimeetrid = $millimeetrid / 10;
+$meetrid = $millimeetrid / 1000;
+
+echo "Ülesanne 2 - $millimeetrit on võrdne:\n";
+echo number_format($sentimeetrid, 2) . " sentimeetrit\n";
+echo number_format($meetrid, 2) . " meetrit\n\n";
+
+
+$a = 3;
+$b = 4;
+$c = sqrt($a ** 2 + $b ** 2);
+
+$ümbermõõt = round($a + $b + $c);
+$pindala = round(($a * $b) / 2);
+
+echo "Ülesanne 3 - Täisnurkse kolmnurga ümbermõõt ja pindala:\n";
+echo "Ümbermõõt: $ümbermõõt\n";
+echo "Pindala: $pindala\n";
+?>

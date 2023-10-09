@@ -1,39 +1,56 @@
-<?php
+# Kahe täisarvulise muutuja loomine
+a = 10
+b = 5
 
-$arv1 = 20;
-$arv2 = 10;
+# Liitmine
+sum_result = a + b
+print(f"{a} + {b} = {sum_result}")
 
-$liitmine = $arv1 + $arv2;
-$lahutamine = $arv1 - $arv2;
-$korrutamine = $arv1 * $arv2;
-$jagamine = $arv1 / $arv2;
-$jääk = $arv1 % $arv2;
+# Lahutamine
+subtraction_result = a - b
+print(f"{a} - {b} = {subtraction_result}")
 
-echo "Ülesanne 1 - Muutujate $arv1 ja $arv2 vahelised tehted:\n";
-echo "Liitmine: $arv1 + $arv2 = $liitmine\n";
-echo "Lahutamine: $arv1 - $arv2 = $lahutamine\n";
-echo "Korrutamine: $arv1 * $arv2 = $korrutamine\n";
-echo "Jagamine: $arv1 / $arv2 = $jagamine\n";
-echo "Jääk: $arv1 % $arv2 = $jääk\n\n";
+# Korrutamine
+multiply_result = a * b
+print(f"{a} * {b} = {multiply_result}")
 
+# Jagamine
+divide_result = a / b
+print(f"{a} / {b} = {divide_result}")
 
-$millimeetrid = 2500;
-$sentimeetrid = $millimeetrid / 10;
-$meetrid = $millimeetrid / 1000;
+# Jäägi leidmine
+remainder_result = a % b
+print(f"{a} % {b} = {remainder_result}")
 
-echo "Ülesanne 2 - $millimeetrit on võrdne:\n";
-echo number_format($sentimeetrid, 2) . " sentimeetrit\n";
-echo number_format($meetrid, 2) . " meetrit\n\n";
+# Millimeetrite arv
+mm = 2500
 
 
-$a = 3;
-$b = 4;
-$c = sqrt($a ** 2 + $b ** 2);
 
-$ümbermõõt = round($a + $b + $c);
-$pindala = round(($a * $b) / 2);
+# Teisendamine sentimeetriteks ja meetriteks
+cm = mm / 10
+m = mm / 1000
 
-echo "Ülesanne 3 - Täisnurkse kolmnurga ümbermõõt ja pindala:\n";
-echo "Ümbermõõt: $ümbermõõt\n";
-echo "Pindala: $pindala\n";
-?>
+# Vastuste vormindamine kahe koha peale pärast koma
+cm_formatted = "{:.2f}".format(cm)
+m_formatted = "{:.2f}".format(m)
+
+# Väljastamine
+print(f"{mm} mm on {cm_formatted} cm ja {m_formatted} m.")
+
+
+# Kolmnurga küljepikkused
+a = 5
+b = 12
+
+# Ümbermõõdu leidmine
+perimeter = a + b + (a**2 + b**2)**0.5
+
+# Pindala leidmine
+area = (a * b) / 2
+
+# Ümardamine täisarvuni ja täislausega
+perimeter_rounded = round(perimeter)
+area_rounded = round(area)
+
+print(f"Täisnurkse kolmnurga ümbermõõt on {perimeter_rounded} ja pindala on {area_rounded}.")

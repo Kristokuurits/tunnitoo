@@ -1,54 +1,87 @@
+# Loo arvud 1-100 ja lisa iga arvu järele punkt
+for i in range(1, 101):
+    if i % 10 == 0:
+        print(f"{i}.")
+    else:
+        print(f"{i}.", end=" ")
 
-arvud = list(range(1, 101))
+# Reavahetus
+print()
 
-for i, arv in enumerate(arvud):
-    if i % 10 == 0 and i != 0:
-        print()
-    print(f"{arv}.", end=" ")
+# Loo arvud 1-100 ja lisa iga arvu järele punkt
+for i in range(1, 101):
+    if i % 10 == 0:
+        print(f"{i}.")
+    else:
+        print(f"{i}.", end=" ")
 
-print("\n")
+# Reavahetus
+print()
 
-
-print("*" * 10)
-
-
+# Rida - koosta tärnidest vertikaalses reas horisontaalne rida
 for i in range(10):
     print("*", end=" ")
 
-print("\n")
+# Reavahetus
+print()
 
+# Rida II - koosta tärnidest horisontaalses reas vertikaalne rida
+for i in range(10):
+    print("*")
 
-n = int(input("Sisesta ruudu suurus: "))
+# Reavahetus
+print()
 
-for i in range(n):
-    for j in range(n):
-        print("*", end=" ")
-    print()
+# Ruut - küsi kasutajalt ruudu suurust ja koosta tärnidest ruut
+ruudu_suurus = int(input("Sisesta ruudu suurus: "))
+for i in range(ruudu_suurus):
+    print("*" * ruudu_suurus)
 
-print("\n")
+# Reavahetus
+print()
 
-
+# Kahanev - väljasta paarisarvud 10-0
 for i in range(10, -1, -2):
     print(i, end=" ")
 
-print("\n")
+# Reavahetus
+print()
 
-
+# Kolmega jagunevad - tekita arvud 1-100, aga kuva kolmega jagunevad arvud
 for i in range(1, 101):
     if i % 3 == 0:
         print(i, end=" ")
 
-print("\n")
+# Reavahetus
+print()
 
+# Massiivid ja tsüklid
+tudrukud = ["Marta", "Liisa", "Anna", "Laura"]
+poisid = ["Markus", "Andreas", "Karl", "Jaan"]
 
-poisid = ["Jüri", "Mati", "Peeter", "Tõnu", "Andres"]
-tüdrukud = ["Mari", "Kati", "Liis", "Anu", "Eva"]
+# Väljasta poiste ja tüdrukute paarid erinevatel ridadel
+for t, p in zip(tudrukud, poisid):
+    print(f"Tüdruk: {t}, Poiss: {p}")
 
-for poiss, tüdruk in zip(poisid, tüdrukud):
-    print(f"Poiss: {poiss}, Tüdruk: {tüdruk}")
+# Reavahetus
+print()
 
+# Tee massiivide kopiaad
+tudrukud_koopia = tudrukud.copy()
 poisid_koopia = poisid.copy()
-tüdrukud_koopia = tüdrukud.copy()
 
-print("\nKoopia poisid:", poisid_koopia)
-print("Koopia tüdrukud:", tüdrukud_koopia)
+# Väljasta kopeeritud massiivid
+print("Tüdrukute kopiaa:", tudrukud_koopia)
+print("Poiste kopiaa:", poisid_koopia)
+
+# Reavahetus
+print()
+
+# Tekita suvalistest tüdrukutest ja poistest koopia (nimed ei tohi korduda)
+import random
+
+tudrukud_suvaline = random.sample(tudrukud, len(tudrukud))
+poisid_suvaline = random.sample(poisid, len(poisid))
+
+print("Suvaline tüdrukute järjekord:", tudrukud_suvaline)
+print("Suvaline poiste järjekord:", poisid_suvaline)

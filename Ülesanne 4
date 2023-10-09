@@ -2,219 +2,167 @@
 <html>
 <head>
     <title>Jagamine</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Jagamine</h1>
-        <form method="GET">
-            <div class="form-group">
-                <label for="number1">Esimene arv:</label>
-                <input type="number" class="form-control" id="number1" name="number1">
-            </div>
-            <div class="form-group">
-                <label for="number2">Teine arv:</label>
-                <input type="number" class="form-control" id="number2" name="number2">
-            </div>
-            <button type="submit" class="btn btn-primary">Jaga</button>
-        </form>
-        <br>
-        <?php
-        if (!empty($_GET['number1']) && !empty($_GET['number2'])) {
-            $number1 = $_GET['number1'];
-            $number2 = $_GET['number2'];
-
-            if ($number2 != 0) {
-                $result = $number1 / $number2;
-                echo "Tulemus: " . $result;
-            } else {
-                echo "Viga: Ei saa jagada nulliga!";
-            }
+    <form method="GET" action="">
+        <input type="text" name="arv1" placeholder="Esimene arv">
+        <input type="text" name="arv2" placeholder="Teine arv">
+        <input type="submit" value="Jaga">
+    </form>
+    <?php
+    if (!empty($_GET['arv1']) && !empty($_GET['arv2'])) {
+        $arv1 = $_GET['arv1'];
+        $arv2 = $_GET['arv2'];
+        
+        if ($arv2 == 0) {
+            echo "Hoiatus: Nulliga jagamine ei ole lubatud!";
+        } else {
+            $tulemus = $arv1 / $arv2;
+            echo "Tulemus: $tulemus";
         }
-        ?>
-    </div>
+    }
+    ?>
 </body>
 </html>
+
+
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Vanus</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Vanus</h1>
-        <form method="GET">
-            <div class="form-group">
-                <label for="age1">Esimese inimese vanus:</label>
-                <input type="number" class="form-control" id="age1" name="age1">
-            </div>
-            <div class="form-group">
-                <label for="age2">Teise inimese vanus:</label>
-                <input type="number" class="form-control" id="age2" name="age2">
-            </div>
-            <button type="submit" class="btn btn-primary">Kontrolli</button>
-        </form>
-        <br>
-        <?php
-        if (!empty($_GET['age1']) && !empty($_GET['age2'])) {
-            $age1 = $_GET['age1'];
-            $age2 = $_GET['age2'];
-
-            if ($age1 == $age2) {
-                echo "Mõlemad inimesed on ühevanused.";
-            } elseif ($age1 > $age2) {
-                echo "Esimese inimese vanus on suurem.";
-            } else {
-                echo "Teise inimese vanus on suurem.";
-            }
+    <form method="GET" action="">
+        <input type="text" name="vanus1" placeholder="Esimene vanus">
+        <input type="text" name="vanus2" placeholder="Teine vanus">
+        <input type="submit" value="Leia vanem">
+    </form>
+    <?php
+    if (!empty($_GET['vanus1']) && !empty($_GET['vanus2'])) {
+        $vanus1 = $_GET['vanus1'];
+        $vanus2 = $_GET['vanus2'];
+        
+        if ($vanus1 > $vanus2) {
+            echo "Esimene vanus ($vanus1) on vanem.";
+        } elseif ($vanus2 > $vanus1) {
+            echo "Teine vanus ($vanus2) on vanem.";
+        } else {
+            echo "Mõlemad on ühevanused.";
         }
-        ?>
-    </div>
+    }
+    ?>
 </body>
 </html>
+
+
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Ristkülik või ruut</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Ristkülik või ruut</h1>
-        <form method="GET">
-            <div class="form-group">
-                <label for="side1">Esimese külje pikkus:</label>
-                <input type="number" class="form-control" id="side1" name="side1">
-            </div>
-            <div class="form-group">
-                <label for="side2">Teise külje pikkus:</label>
-                <input type="number" class="form-control" id="side2" name="side2">
-            </div>
-            <button type="submit" class="btn btn-primary">Kontrolli</button>
-        </form>
-        <br>
-        <?php
-        if (!empty($_GET['side1']) && !empty($_GET['side2'])) {
-            $side1 = $_GET['side1'];
-            $side2 = $_GET['side2'];
-
-            if ($side1 == $side2) {
-                echo "Sisestatud küljepikkused moodustavad ruudu.";
-            } else {
-                echo "Sisestatud külje pikkused moodustavad ristküliku.";
-            }
+    <form method="GET" action="">
+        <input type="text" name="kylg1" placeholder="Esimene külg">
+        <input type="text" name="kylg2" placeholder="Teine külg">
+        <input type="submit" value="Määratle kujund">
+    </form>
+    <?php
+    if (!empty($_GET['kylg1']) && !empty($_GET['kylg2'])) {
+        $kylg1 = $_GET['kylg1'];
+        $kylg2 = $_GET['kylg2'];
+        
+        if ($kylg1 == $kylg2) {
+            echo "See on ruut.";
+        } else {
+            echo "See on ristkülik.";
         }
-        ?>
-    </div>
+    }
+    ?>
 </body>
 </html>
+
+
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Ristkülik või ruut II</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Ristkülik või ruut II</h1>
-        <form method="GET">
-            <div class="form-group">
-                <label for="side1">Esimese külje pikkus:</label>
-                <input type="number" class="form-control" id="side1" name="side1">
-            </div>
-            <div class="form-group">
-                <label for="side2">Teise külje pikkus:</label>
-                <input type="number" class="form-control" id="side2" name="side2">
-            </div>
-            <button type="submit" class="btn btn-primary">Kontrolli</button>
-        </form>
-        <br>
-        <?php
-        if (!empty($_GET['side1']) && !empty($_GET['side2'])) {
-            $side1 = $_GET['side1'];
-            $side2 = $_GET['side2'];
-
-            if ($side1 == $side2) {
-                echo "Sisestatud küljepikkused moodustavad ruudu.";
-            } else {
-                echo "Sisestatud küljepikkused moodustavad ristküliku.";
-            }
+    <form method="GET" action="">
+        <input type="text" name="kylg1" placeholder="Esimene külg">
+        <input type="text" name="kylg2" placeholder="Teine külg">
+        <input type="submit" value="Määratle kujund">
+    </form>
+    <?php
+    if (!empty($_GET['kylg1']) && !empty($_GET['kylg2'])) {
+        $kylg1 = $_GET['kylg1'];
+        $kylg2 = $_GET['kylg2'];
+        
+        if ($kylg1 == $kylg2) {
+            echo "See on ruut.";
         } else {
-            echo "Palun sisestage küljepikkused.";
+            echo "See on ristkülik.";
         }
-        ?>
-    </div>
+    }
+    ?>
 </body>
 </html>
+
+
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Juubel</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Juubel</h1>
-        <form method="GET">
-            <div class="form-group">
-                <label for="birthyear">Sünniaasta:</label>
-                <input type="number" class="form-control" id="birthyear" name="birthyear">
-            </div>
-            <button type="submit" class="btn btn-primary">Kontrolli</button>
-        </form>
-        <br>
-        <?php
-        if (!empty($_GET['birthyear'])) {
-            $birthyear = $_GET['birthyear'];
-
-            if (($birthyear % 100 == 0 && $birthyear % 400 == 0) || ($birthyear % 100 != 0 && $birthyear % 4 == 0)) {
-                echo $birthyear . " on juubeliaasta.";
-            } else {
-                echo $birthyear . " ei ole juubeliaasta.";
-            }
+    <form method="GET" action="">
+        <input type="text" name="sunniaasta" placeholder="Sünniaasta">
+        <input type="submit" value="Kontrolli juubelit">
+    </form>
+    <?php
+    if (!empty($_GET['sunniaasta'])) {
+        $sunniaasta = $_GET['sunniaasta'];
+        
+        if ((date('Y') - $sunniaasta) % 5 == 0) {
+            echo "See aasta on juubeliaasta!";
+        } else {
+            echo "See aasta ei ole juubeliaasta.";
         }
-        ?>
-    </div>
+    }
+    ?>
 </body>
 </html>
+
+
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Hinne</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Hinne</h1>
-        <form method="GET">
-            <div class="form-group">
-                <label for="points">KT punktid:</label>
-                <input type="number" class="form-control" id="points" name="points">
-            </div>
-            <button type="submit" class="btn btn-primary">Kontrolli</button>
-        </form>
-        <br>
-        <?php
-        if (!empty($_GET['points'])) {
-            $points = $_GET['points'];
-
-            if ($points > 10) {
-                echo "Imeline!";
-            } elseif ($points >= 5 && $points <= 9) {
-                echo "OK!";
-            } elseif ($points < 5) {
-                echo "YES SIR!";
-            }
+    <form method="GET" action="">
+        <input type="text" name="punktid" placeholder="Sisesta punktid">
+        <input type="submit" value="Kontrolli hinnet">
+    </form>
+    <?php
+    if (!empty($_GET['punktid'])) {
+        $punktid = $_GET['punktid'];
+        
+        if ($punktid > 10) {
+            echo "SUPER!";
+        } elseif ($punktid >= 5) {
+            echo "TEHTUD!";
+        } elseif ($punktid >= 0) {
+            echo "KASIN!";
         } else {
             echo "SISESTA OMA PUNKTID!";
         }
-        ?>
-    </div>
+    }
+    ?>
 </body>
 </html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leht 1</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="content">
+        <!-- Dünaamiline sisu ilmub siia -->
+    </div>
+    <div id="notification">
+        <!-- Teavitused kuvatakse siin -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

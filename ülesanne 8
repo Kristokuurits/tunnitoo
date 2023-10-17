@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vanuse arvutamine ja aastaajad</title>
+</head>
+<body>
+    <h1>Kuupäev ja kellaaeg:</h1>
+    <p id="currentDateTime"></p>
+    
+    <h2>Vanuse arvutamine:</h2>
+    <label for="birthYear">Sünniaasta:</label>
+    <input type="number" id="birthYear">
+    <button onclick="calculateAge()">Arvuta vanus</button>
+    <p id="ageResult"></p>
+    
+    <h2>Kooliaasta jääk:</h2>
+    <p id="schoolDaysRemaining"></p>
+    
+    <h2>Aastaaja pilt:</h2>
+    <img id="seasonImage">
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?php
+$andmed = [
+    'Nimi' => 'John Doe',
+    'Email' => 'johndoe@tthk.ee',
+    'Vanus' => 30,
+    'Hobi' => 'Jalgrattasõit',
+];
+
+$failinimi = 'andmefail.txt';
+$fail = fopen($failinimi, 'w');
+
+if ($fail) {
+    foreach ($andmed as $voti => $vaartus) {
+        fwrite($fail, "$voti: $vaartus\n");
+    }
+    fclose($fail);
+    echo "Andmed on edukalt salvestatud faili '$failinimi'.";
+} else {
+    echo "Faili avamine ebaõnnestus.";
+}
+?>
+
+<?php
+$failinimi = 'andmefail.txt';
+$fail = fopen($failinimi, 'r');
+
+if ($fail) {
+    $sisu = fread($fail, filesize($failinimi));
+    $sisu = nl2br($sisu);
+    fclose($fail);
+    echo $sisu;
+} else {
+    echo "Faili avamine ebaõnnestus.";
+}
+?>
+
+<?php
+$failinimi = 'andmefail.txt';
+$fail = fopen($failinimi, 'r+');
+
+if ($fail) {
+    $esimene_rida = fgets($fail);
+    $lisatav_info = "Telefon: 555-1234\nAadress: 123 Main Street\n";
+
+    fseek($fail, 0);
+    fwrite($fail, $esimene_rida . $lisatav_info);
+    fclose($fail);
+    echo "Andmed on failis edukalt muudetud.";
+} else {
+    echo "Faili avamine ebaõnnestus.";
+}
+?>
+
+<?php
+$failinimi = 'andmefail.txt';
+
+if (file_exists($failinimi)) {
+    $faili_suurus = filesize($failinimi);
+    if ($faili_suurus > 200) {
+        unlink($failinimi);
+        echo "Fail '$failinimi' on kustutatud, kuna see oli suurem kui 200 baiti.";
+    } else {
+        echo "Fail '$failinimi' ei vasta kustutamise kriteeriumile (alla 200 baiti).";
+    }
+} else {
+    echo "Fail '$failinimi' ei ole leitud.";
+}
+?>

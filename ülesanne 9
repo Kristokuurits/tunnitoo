@@ -1,0 +1,57 @@
+<?php
+// Funktsioon, mis tervitab kasutajat nimepidi
+function tervitaNimepidi($nimi) {
+    $nimeOsad = explode(" ", $nimi); // Tükeldame nime tühiku järgi
+    $tervitavNimi = ucfirst(strtolower($nimeOsad[0])); // Suur algustäht ja ülejäänud väikesteks
+    echo "Tere, $tervitavNimi!<br>";
+}
+
+// Funktsioon, mis lisab teksti iga tähe järel punkti
+function lisaPunktid($tekst) {
+    $tekstPunktidega = implode('.', str_split($tekst));
+    echo "$tekstPunktidega<br>";
+}
+
+// Funktsioon, mis asendab ropud sõnad tärnidega
+function asendaRopudSonad($tekst) {
+    $ropudSonad = array("roopsona1", "roopsona2", "roopsona3"); // Lisa siia tegelikud ropud sõnad
+    foreach ($ropudSonad as $roopSona) {
+        $tekst = str_ireplace($roopSona, '****', $tekst);
+    }
+    echo "$tekst<br>";
+}
+
+// Funktsioon, mis loob emaili aadressi
+function looEmail($eesnimi, $perenimi) {
+    $email = strtolower(str_replace(['ä', 'ö', 'ü', 'õ'], ['a', 'o', 'y', 'o'], $eesnimi . '.' . $perenimi)) . '@tthk.ee';
+    echo "Email: $email<br>";
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nimi = $_POST["nimi"];
+    $tekst = $_POST["tekst"];
+    $eesnimi = $_POST["eesnimi"];
+    $perenimi = $_POST["perenimi"];
+
+    tervitaNimepidi($nimi);
+    lisaPunktid($tekst);
+    asendaRopudSonad($tekst);
+    looEmail($eesnimi, $perenimi);
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ülesanne 9</title>
+</head>
+<body>
+    <form method="POST">
+        Nimi: <input type="text" name="nimi"><br>
+        Tekst: <textarea name="tekst"></textarea><br>
+        Eesnimi: <input type="text" name="eesnimi"><br>
+        Perenimi: <input type="text" name="perenimi"><br>
+        <input type="submit" value="Esita">
+    </form>
+</body>
+</html>

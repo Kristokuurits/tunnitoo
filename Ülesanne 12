@@ -1,0 +1,65 @@
+# Küsi kasutajalt stardi ja lõppaja kujul hh:mm
+start_time = input("Sisesta sõidu algusaeg (hh:mm): ")
+end_time = input("Sisesta sõidu lõpuaeg (hh:mm): ")
+
+# Kontrolli, kas sisestatud ajad on vähemalt viis sümbolit pikad
+if len(start_time) < 5 or len(end_time) < 5:
+    print("Vigased ajad. Ajad peavad olema vähemalt viis sümbolit pikad (hh:mm).")
+else:
+    # Eralda tunnid ja minutid
+    start_hours, start_minutes = map(int, start_time.split(":"))
+    end_hours, end_minutes = map(int, end_time.split(":"))
+
+    # Arvuta sõiduaeg tundides ja minutites
+    hours = end_hours - start_hours
+    minutes = end_minutes - start_minutes
+
+    # Korrigeeri aega, kui minutid on negatiivsed
+    if minutes < 0:
+        hours -= 1
+        minutes += 60
+
+    print(f"Sõiduaeg: {hours} tundi ja {minutes} minutit.")
+
+Nimi,Sugu,Palk
+Mari,Naine,3000
+Jaan,Mees,3500
+...
+
+import csv
+
+# Loeme andmefaili
+with open("tootajad.csv", "r") as file:
+    reader = csv.DictReader(file)
+    male_salaries = []
+    female_salaries = []
+
+    for row in reader:
+        gender = row["Sugu"]
+        salary = int(row["Palk"])
+
+        if gender == "Mees":
+            male_salaries.append(salary)
+        elif gender == "Naine":
+            female_salaries.append(salary)
+
+    # Arvuta meeste ja naiste keskmised palgad
+    if male_salaries:
+        male_avg_salary = sum(male_salaries) / len(male_salaries)
+        male_max_salary = max(male_salaries)
+    else:
+        male_avg_salary = 0
+        male_max_salary = 0
+
+    if female_salaries:
+        female_avg_salary = sum(female_salaries) / len(female_salaries)
+        female_max_salary = max(female_salaries)
+    else:
+        female_avg_salary = 0
+        female_max_salary = 0
+
+    print(f"Meeste keskmine palk: {male_avg_salary}")
+    print(f"Naiste keskmine palk: {female_avg_salary}")
+    print(f"Meeste kõrgeim palk: {male_max_salary}")
+    print(f"Naiste kõrgeim palk: {female_max_salary}")
+

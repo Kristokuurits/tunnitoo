@@ -5,22 +5,12 @@
     <title>Minu Ülesanne</title>
 </head>
 <body>
-
-<?php
-$nimi = "Kristo";
-$sunniaasta = "2006";
-$tahtkuju = "Jäär";
-
-echo $nimi . "<br>" . $sunniaasta . "<br>" . $tahtkuju;
-?>
-
-<?php
-echo "It's My Life - Dr. Alban";
-?>
-
-<?php
-echo "۱(۱ ( -.-) 0_(\")(\")";
-?>
-
+    <p>Nimi: Kristo</p>
+    <p>Sünniaasta: 2006</p>
+    <p>Tähtkuju: Jäär</p>
+    
+    <p>Lemmiklaul: It's My Life - Dr. Alban</p>
+    
+    <p>Emoji: ۱(۱ ( -.-) 0_(")(")</p>
 </body>
 </html>
